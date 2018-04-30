@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
- <constant name="struts.custom.i18n.resources" value="messageResource"/>
- <package name="SimpleCalculator" extends="struts-default">  
-        <action name="jisuan" class="action.CalculateAction">  
-            <result name="success">/res.jsp</result>  
-            <result name="fail">/input.jsp</result>  
-        </action>  
-        <action name="logins" class="action.UserAction">  
-            <result name="success">/LoginSuccess.jsp</result>
-            <result name="input">/login.jsp</result>    
-        </action> 
-    </package> 
+	<constant name="struts.custom.i18n.resources" value="messageResource" />
+	<package name="default" extends="struts-default">
+		
+		<action name="jisuan" class="action.CalculateAction">
+			<result name="success">/res.jsp</result>
+			<result name="fail">/input.jsp</result>
+		</action>
+		<action name="logins" class="action.UserAction">
+			<result name="success">/LoginSuccess.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+	</package>
+	 <include file="sec/interceptor.xml"/>
 </struts>    
+

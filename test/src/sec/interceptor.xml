@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="sec" extends="struts-default">
+		<interceptors>
+			<interceptor name="User" class="sec.Interceptor" />
+			<interceptor-stack name="MyStack">
+				<interceptor-ref name="User" />
+				<interceptor-ref name="params" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="error">/interceptor_error.jsp</result>
+		</global-results>
+		<action name="inputs" class="action.MyAction">
+			<interceptor-ref name="User" />
+			<interceptor-ref name="params" />
+			<result name="success">/interceptor_suc.jsp</result>
+		</action>
+	</package>
+
+</struts>

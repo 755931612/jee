@@ -1,3 +1,4 @@
 /WebRoot/WEB-INF/lib/*.jar
 /WebRoot/WEB-INF/classes/dao/*.class
 /WebRoot/WEB-INF/classes/controller/*.class
+/jee2018/
