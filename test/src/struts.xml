@@ -3,7 +3,7 @@
 <struts>
 	<constant name="struts.custom.i18n.resources" value="messageResource" />
 	<package name="default" extends="struts-default">
-		
+
 		<action name="jisuan" class="action.CalculateAction">
 			<result name="success">/res.jsp</result>
 			<result name="fail">/input.jsp</result>
@@ -12,7 +12,11 @@
 			<result name="success">/LoginSuccess.jsp</result>
 			<result name="input">/login.jsp</result>
 		</action>
+		<action name="validation" class="action.XmlValidation">
+			<result>/validation_suc.jsp</result>
+			<result name="input">/validation_test.jsp</result>
+		</action>
 	</package>
-	 <include file="sec/interceptor.xml"/>
+	<include file="sec/interceptor.xml" />
 </struts>    
 
